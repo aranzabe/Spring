@@ -1,0 +1,39 @@
+Desde las vistas, para acceder al valor de una variable de sesion que se llame usuario:
+
+<h2> Bienvenido  ${sessionScope.usuario}</h2>  
+
+En jsp, para comparar un valor que se pasa desde el controlador:
+<c:if test="${examen == 1}">
+                <div class="container">
+                  <p> Hay un nuevo examen disponible  -> : &nbsp <u> <a href="Hacer_examen.htm" title="Hacer examen"> Hacer el examen </a> </u>  
+                 </p>
+                </div>
+</c:if>
+
+
+
+Ayuda sobre etiquetas jstl:
+https://beginnersbook.com/2013/11/jstl-cif-core-tag/  --> Ayuda de etiquetas jstl
+
+<c:if test="${condition}">
+...
+..
+</c:if>
+
+
+
+En el controlador, para acceder a la sesión:
+
+@RequestMapping(value = "Cerrar_sesion.htm", method = RequestMethod.GET)
+    public ModelAndView Cerrar_sesion(HttpServletRequest request) {
+
+        //Destruir la sesión
+        request.getSession().setAttribute("usuario", null);
+
+        //Devuelve una vista con un mensaje 
+        ModelAndView vista = new ModelAndView();
+        vista.setViewName("index");
+        vista.addObject("mensaje", "Se cerró la sesión.");
+
+        return vista;
+    }

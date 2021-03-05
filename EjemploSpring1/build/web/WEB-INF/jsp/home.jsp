@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        Esto se carga usando un controlador: Ñandú.
+        Página 'home' accedida desde el controlador.
     </body>
 </html>

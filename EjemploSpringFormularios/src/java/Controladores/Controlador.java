@@ -39,7 +39,7 @@ public class Controlador {
     }
     
     @RequestMapping(value="form.htm", method=RequestMethod.POST)
-    public String recogerDatos2(Persona p, Model modelo){
+    public String recogerDatos(Persona p, Model modelo){
         modelo.addAttribute("nombre", p.getNombre());
         modelo.addAttribute("email", p.getEmail());
         modelo.addAttribute("edad", p.getEdad());
